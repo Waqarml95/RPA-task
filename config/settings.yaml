@@ -1,0 +1,106 @@
+# Application Settings
+app:
+  name: "AltoroMutual Automation"
+  version: "1.0.0"
+  environment: "production"
+
+# Browser Configuration
+browser:
+  type: "chromium"  # chromium, firefox, webkit
+  headless: false
+  slow_mo: 0
+  viewport:
+    width: 1920
+    height: 1080
+  locale: "en-US"
+  timezone: "America/New_York"
+  humanize: true  # Enable human-like delays and behaviors
+  
+# Timeouts (milliseconds)
+timeouts:
+  default: 30000
+  navigation: 30000
+  action: 10000
+  assertion: 5000
+  
+# URLs
+urls:
+  base: "https://demo.testfire.net"
+  swagger: "https://demo.testfire.net/swagger/index.html"
+  login: "/login.jsp"
+  dashboard: "/bank/main.jsp"
+  accounts: "/bank/account.jsp"
+  transactions: "/bank/transaction.jsp"
+  transfer: "/bank/transfer.jsp"
+  cards: "/bank/customize.jsp"
+  
+# Credentials
+credentials:
+  valid:
+    username: "admin"
+    password: "admin"
+  invalid:
+    username: "admin"
+    password: "wrongpassword"
+  api:
+    username: "jsmith"
+    password: "demo1234"
+    
+# Transfer Configuration
+transfer:
+  from_account: "800000 Checking"
+  to_account: "800000 Corporate"
+  amount: "100000.00"
+  
+# Filter Configuration
+filters:
+  date_range:
+    start: "2025-03-01"  # March 1st, 2025 in ISO format
+    end: "2025-03-08"    # March 8th, 2025 in ISO format
+  deposits:
+    min_amount: 100
+  api_dates:
+    start: "2025-01-01"  # January 1st, 2025 in ISO format
+    end: "2025-03-31"    # March 31st, 2025 in ISO format
+    
+# Output Configuration
+output:
+  base_dir: "output"
+  excel:
+    filename: "AltoroMutual_Automation.xlsx"
+    autosize_columns: true
+    freeze_panes: "A2"
+  screenshots:
+    dir: "output/screenshots"
+    format: "png"
+    full_page: false
+  logs:
+    dir: "output/logs"
+    format: "csv"
+    
+# Artifacts Configuration
+artifacts:
+  dir: "artifacts"
+  trace: true
+  video: true
+  har: true
+  screenshots_on_failure: true
+  
+# Retry Configuration
+retry:
+  max_attempts: 3
+  delay_ms: 1000
+  backoff_factor: 2
+  
+# API Configuration
+api:
+  base_url: "https://demo.testfire.net/api"
+  timeout: 10000
+  verify_ssl: true
+  
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "structured"
+  include_timestamp: true
+  include_context: true
